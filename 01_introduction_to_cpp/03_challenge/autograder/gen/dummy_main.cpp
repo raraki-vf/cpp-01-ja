@@ -1,44 +1,46 @@
 #include <iostream>
 #include <string>
 
+
 int dummy_main() {
-    // Complete everything in this program.
-    // Compile and execute the program without errors.
+    // このプログラムに書かれているすべての手順を完了してください。
+    // プログラムをコンパイルして実行してください (エラーが出ない状態にしてください)。
 
-    // Complete the following variables by using the correct types for the data.
-    int pizzaSlices = 12;
-    float pi = 3.14159f;
-    long long starsInTheUniverse = 1234567890LL;
-    char aLetter = 'k';
-    std::string aWord = "kaleidescope";
-    double veryPrecisePi = 3.14159265358979;
-    bool thisIsTrue = true;
-    bool thisIsAlsoTrue = thisIsTrue;
+    // データに適した型を使用して、次の変数の宣言と初期化を完成させてください。
+    int pizzaSlices {12};
+    float pi {3.14159f};
+    long long starsInTheUniverse {1234567890LL};
+    char aLetter {'k'};
+    std::string aWord ={"kaleidescope"};
+    double veryPrecisePi {3.14159265358979};
+    bool thisIsTrue {true};
+    bool thisIsAlsoTrue {thisIsTrue};
 
-    // On the next three lines, declare and initialize a new variable on each line. Each variable must be a different data type.
-    // variable #1 here
-    // variable #2 here
-    // variable #3 here
+    // 新しい変数を3つ宣言して初期化してください (3行で記述、1行につき1つの変数)。各変数のデータ型が異なるようにしてください。
+    long bigNumber {1000000}; // ここに変数1を記述
+    short smallNumber {1}; // ここに変数2を記述
+    std::string hoge {"hogehoge"};// ここに変数3を記述
 
-    // Complete these arrays by giving them the correct data type.
+    // 正しいデータ型を指定して次の配列を完成させてください。
     int myArray[] = {1, 2, 3, 4};
     float anotherArray[] = {3.5, 1.2, 6.7};
 
-    // Make your own array on the next line. It should contain at least 5 numbers. The numbers can be any number data type, but they must all be the same data type.
+    // 独自の配列を作成し (1行で記述)、そこに5個以上の数値を格納します。数値のデータ型はどれでもかまいませんが、すべて同じデータ型にしてください。
+    bool answerArray[] = {true, true, false, true, false};
 
-    // This array should not use `int` because it stores big numbers. What data type is better?
-    long long bigNumbers[] = {500000, 700000, 800000};
+    // この配列には大きな数値を格納するので、`int` 型は適していません。どのデータ型が適切ですか。
+    long bigNumbers[] = {500000, 700000, 800000};
 
-    // Use static_cast to change 'sizeOfCesiumAtom' to an int. Use 'static_cast' on the line after sizeOfCesiumAtom.
-    double sizeOfCesiumAtom = 0.267;
-    int sizeOfCesiumAtomCast = static_cast<int>(sizeOfCesiumAtom);
+    // static_castを使用して、`sizeOfCesiumAtom` をint型に変更してください。`static_cast` は、sizeOfCesiumAtomの次の行に記述してください。
+    double sizeOfCesiumAtom {0.267};
+    int sizeOfCesiumAtomCast {static_cast<int>(sizeOfCesiumAtom)};
 
-    // Make three constant variables. You can use any data type, but each variable must be a different data type.
-    // constant variable #1 here
-    // constant variable #2 here
-    // constant variable #3 here
+    // 3つの定数変数を作成してください。データ型はどれでもかまいませんが、各変数のデータ型が異なるようにしてください。
+    const float g {9.80665}; // ここに定数変数1を記述
+    const long P0 {101325}; // ここに定数変数2を記述
+    const long long c {299792458}; // ここに定数変数3を記述
 
-    // You don't need to change anything here. These lines are for checking program output.
+    // 次の行を変更する必要はありません。これらはプログラムの出力をチェックするためのものです。
     std::cout << pizzaSlices << std::endl;
     std::cout << pi << std::endl;
     std::cout << starsInTheUniverse << std::endl;
