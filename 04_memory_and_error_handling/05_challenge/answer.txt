@@ -1,0 +1,10 @@
+チャレンジ5 回答
+
+7行目では"numbers"に値が格納されておらず要素がないためサイズは0、メモリの確保量も0
+"Initial size: 0, capacity: 0"
+
+9, 10, 11行目で3つ値が格納されたので、サイズは3、メモリの確保量は3以上の値
+"After adding elements: size: 3, capacity: (3以上の値、環境依存？)"
+
+14行目でメモリの確保量を10に指定したので、サイズは3、メモリの確保量は10
+After reserving space: size: 3, capacity: 10
