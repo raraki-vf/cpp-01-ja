@@ -1,13 +1,14 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> double_elements(std::vector<int> numbers){
+std::vector<int> double_elements(const std::vector<int>& numbers){
+    std::vector<int> double_numbers = numbers;
 
     for(int i=0; i<numbers.size(); i++){
-        numbers[i] = numbers[i]*2;
+        double_numbers[i] = numbers[i]*2;
     }
 
-    return numbers;
+    return double_numbers;
 }
 
 int main() {
