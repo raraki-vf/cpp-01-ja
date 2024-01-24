@@ -16,6 +16,7 @@ struct car
     char direction{'S'}; //方向(North, South, West, East)
     int speed{0}; //速度
     int position[2] = {0, 0}; //位置({row, col})
+    int fuel = 100;
 };
 
 //速度と方向の制御
@@ -121,6 +122,15 @@ void move(car& car){
     return;
 }
 
+//燃料の消費
+void fuel_calc(car& car){
+    if(car.fuel - car.speed*2 > 0){
+        car.fuel = car.fuel - car.speed*2;
+    } else {
+        car.fuel = 0;
+    }
+}
+
 int main(){
     //初期化
     int user_input{0};
@@ -165,7 +175,8 @@ int main(){
             break;
         }else if(map[user_car.position[0]][user_car.position[1]] == gas_station){
             map[user_car.position[0]][user_car.position[1]] = on_landmark;
-            std::cout << "gas station." << std::endl;
+            std::cout << "gas station. Fuel refill." << std::endl;
+            user_car.fuel = 100;
         }else if(map[user_car.position[0]][user_car.position[1]] == sky_tree){
             map[user_car.position[0]][user_car.position[1]] = on_landmark;
             std::cout << "SkyTree." << std::endl; 
@@ -241,6 +252,14 @@ int main(){
             }
         }
 
+        std::cout << "Fuel level: " << user_car.fuel << " %" << std::endl;
+        std::cout << std::endl;
+
+        if(user_car.fuel == 0){
+            std::cout << "Fuel empty. Game Over." << std::endl;
+            break;
+        }
+
         //ユーザ入力
         std::cout << "Please Input Command" << std::endl 
         << "stop:0 / turn left:1 / turn right:2 / continue straight:3 / accelerate:4 / decelerate:5 / exit:6 " << std::endl;
@@ -257,6 +276,7 @@ int main(){
         //車両の制御
         control(user_input, user_car);
         move(user_car);
+        fuel_calc(user_car);
 
     }
     return 0;
